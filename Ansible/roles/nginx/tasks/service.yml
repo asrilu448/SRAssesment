@@ -1,0 +1,9 @@
+- name: Start NGiNX Service 
+  become: yes
+  become_user: root
+  service: name=nginx state=started
+- name: Restart Nginx  
+  become: yes
+  become_user: root
+  service: name=nginx state=restarted  
+

@@ -1,0 +1,9 @@
+#configure httpd.conf and sending sample html file 
+- name: Copy webserver conf to the destination 
+  copy: src=webserver.conf dest=/etc/nginx/webserver.conf
+  notify: 
+    - Restart Nginx
+- name: Copy index.html to the destination 
+  copy: src=index.html dest=/usr/share/nginx/html/
+
+
