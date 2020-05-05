@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginxapp
+  name: nginxapp
+  namespace: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginxapp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginxapp
+    spec:
+      containers:
+      - image: sriaddagarla/nginxdockerimage:v1 
+        name: nginx

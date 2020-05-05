@@ -1,0 +1,4 @@
+---
+- hosts: tag_stack_webservers 
+  roles: 
+    - nginx
